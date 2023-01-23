@@ -3,11 +3,13 @@ const initialState = [
     id:0,
     name: "Pavithran",
     number: 9790436060,
+    email: "pavithran@gmail.com"
   }, 
   {
     id:1,
     name: "PavithranK",
     number: 9790436061,
+    email: "pavithrank@gmail.com"
   }
 ]
 
