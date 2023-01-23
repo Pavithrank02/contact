@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 const  App = () => {
   return (
@@ -10,15 +11,9 @@ const  App = () => {
       <ToastContainer />
       <Navbar />
       <Routes>
-        <Route exact path="/" element={ <h1>iam an component</h1>}>
-         
-        </Route>
-        <Route exact path="/add" element={ <h1>I am Add Component</h1>}>
-           
-        </Route>
-        <Route  path="/edit/:id">
-           Edit Component
-        </Route>
+        <Route exact path="/" element={ <Home />} />
+        <Route exact path="/add" element={ <h1>I am Add Component</h1>} />
+        <Route  path="/edit/:id" />
       </Routes>
     </div>
   );
