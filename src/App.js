@@ -4,6 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import AddContact from './components/AddContact';
+import EditContact from './components/EditContact';
 
 const  App = () => {
   return (
@@ -12,8 +14,8 @@ const  App = () => {
       <Navbar />
       <Routes>
         <Route exact path="/" element={ <Home />} />
-        <Route exact path="/add" element={ <h1>I am Add Component</h1>} />
-        <Route  path="/edit/:id" />
+        <Route  path="/add" element={ <AddContact />} />
+        <Route  path="/edit/:id" element={<EditContact />}/>
       </Routes>
     </div>
   );
