@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
+import { useNavigate } from "react-router-dom";
 
 const AddContact = () => {
 
@@ -8,6 +9,9 @@ const AddContact = () => {
   const [email, setEmail] = useState("")
   const [number, setNumber] = useState("")
   const contacts = useSelector(state=> state);
+  const dispatch = useDispatch();
+
+  const history = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -24,6 +28,18 @@ const AddContact = () => {
     if(checkNumber) {
       return toast.error("number already exist");
     }
+    const data = {
+      id:contacts[contacts.length - 1].id + 1,
+      name,
+      email,
+      number,
+    };
+
+    dispatch({type:"ADD_CONTACT", payload: data});
+    toast.success("Contact added successfully");
+    history("/");
+  
+    
   }
   return (
 
